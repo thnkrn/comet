@@ -9,7 +9,8 @@ require (
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/google/wire v0.5.0
 	github.com/linxGnu/grocksdb v1.8.0
-	github.com/prometheus/client_golang v1.15.1
+	github.com/mitchellh/mapstructure v1.5.0
+	github.com/prometheus/client_golang v1.16.0
 	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.8.4
 	go.uber.org/automaxprocs v1.5.2
@@ -37,7 +38,6 @@ require (
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/philhofer/fwd v1.1.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
