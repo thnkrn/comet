@@ -42,7 +42,7 @@ COPY . .
 RUN go build -o ./out/comet -v ./cmd/api
 
 # Start fresh from a smaller image
-FROM alpine:3.16
+FROM alpine:3.18
 RUN apk add --no-cache ca-certificates iwatch=0.2.2-r0
 RUN apk add --update --no-cache zlib zlib-dev bzip2 bzip2-dev snappy snappy-dev lz4 lz4-dev zstd zstd-dev
 
