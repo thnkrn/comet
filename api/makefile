@@ -56,7 +56,7 @@ docker-push: ## Push the image to Container Registry (EX. tag=0.0.1)
 	$(DOCKERCMD) push $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)
 
 docker-deploy: ## Build image by pulling cache from latest build on cloud registry and push to cloud registry
-	$(DOCKERCMD) buildx build --platform linux/amd64 -t $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64  --cache-from type=registry,ref=asia-docker.pkg.dev/gcp-analytics-platform-mgt/product-app/comet-api:buildcache .
+	$(DOCKERCMD) buildx build --platform linux/amd64 -t $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64
 	$(DOCKERCMD) push $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64 
 
 mockery:
