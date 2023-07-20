@@ -12,7 +12,7 @@ RUN go get -u -t -d -v ./... && go mod download && go mod tidy && go mod vendor
 RUN go build -o ./out/comet-puller -v ./cmd/api
 
 # Start fresh from a smaller image
-FROM alpine:3.16
+FROM alpine:3.18
 RUN apk add --no-cache ca-certificates iwatch=0.2.2-r0
 COPY --from=build_base /tmp/comet-puller/out/comet-puller /app/comet-puller
 COPY ./config.yml /app
