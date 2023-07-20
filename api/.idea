@@ -1,0 +1,6 @@
+export CGO_CFLAGS="-I/opt/homebrew/opt/rocksdb/include" \
+export CGO_LDFLAGS="-L/opt/homebrew/opt/rocksdb/lib -lrocksdb -lstdc++ -lm -lz -lsnappy -llz4 -lzstd" \
+export LIBRARY_PATH="/opt/homebrew/opt/snappy/lib"
+
+CGO_CFLAGS="-I/path/to/rocksdb/include"
+CGO_LDFLAGS="-L/path/to/rocksdb -lrocksdb -lstdc++ -lm -lz -lsnappy -llz4 -lzstd"

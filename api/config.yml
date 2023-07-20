@@ -1,0 +1,77 @@
+comet:
+  prefork: false
+  recover: false
+  log:
+    tracing: false
+    zap:
+      level: "info"
+      encoding: "json"
+      outputPaths: ["stdout", "/tmp/logs"]
+      errorOutputPaths: ["stderr"]
+      encoderConfig:
+        messageKey: "message"
+        levelKey: "level"
+        levelEncoder: "lowercase"
+  debug:
+    sst-writer-path: "/tmp/rocks-dev/writer"
+
+app:
+  backupPath: "/tmp/rocks-dev/backup"
+  ingestPath: "/tmp/rocks-dev/ingests"
+  databases:
+    - path: "/tmp/rocks-dev/mp4"
+      name: "mp4"
+      mode: read-write
+      createIfMissing: true
+      writeBufferSizeMb: 8
+      maxWriteBufferNumber: 128
+      compressionType: "SNAPPY_COMPRESSION"
+      blockBasedSettings:
+        blockSizeKb: 16
+        blockCacheSizeMb: 256
+        formatVersion: 4
+        bloomFilterBits: 10
+    # - path: "/tmp/rocks-dev/mp5"
+    #   name: "mp5"
+    #   mode: read
+    #   createIfMissing: true
+      # writeBufferSizeMb: 8
+      # maxWriteBufferNumber: 128
+      # compressionType: "SNAPPY_COMPRESSION"
+      # blockBasedSettings:
+      #   blockSizeKb: 16
+      #   blockCacheSizeMb: 256
+      #   formatVersion: 4
+      #   bloomFilterBits: 10
+    # - path: "/tmp/rocks-dev/mp6"
+    #   name: "mp6"
+    #   mode: read
+    #  createIfMissing: true
+      # writeBufferSizeMb: 8
+      # maxWriteBufferNumber: 128
+      # compressionType: "SNAPPY_COMPRESSION"
+      # blockBasedSettings:
+      #   blockSizeKb: 16
+      #   blockCacheSizeMb: 256
+      #   formatVersion: 4
+      #   bloomFilterBits: 10
+    # - path: "/tmp/rocks-dev/db1"
+    #   name: "db1"
+    #   mode: read-write
+    #   source: "sst_example"
+    #   createIfMissing: true
+      # writeBufferSizeMb: 8
+      # maxWriteBufferNumber: 128
+      # compressionType: "SNAPPY_COMPRESSION"
+      # blockBasedSettings:
+      #   blockSizeKb: 16
+      #   blockCacheSizeMb: 256
+      #   formatVersion: 4
+      #   bloomFilterBits: 10
+    # - path: "/tmp/rocks-dev/db2"
+    #   name: "db2"
+    #   mode: secondary
+    #   primaryRef: "/tmp/rocks-dev/db1"
+    # - path: "/tmp/rocks-dev/backup/bu1"
+    #   name: "bu1"
+    #   mode: read-write

@@ -1,0 +1,4 @@
+{
+    "docker": "replace-with-gsa-key",
+    "k8s": "replace-with-config-map"
+}

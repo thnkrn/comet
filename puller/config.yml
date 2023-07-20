@@ -1,0 +1,30 @@
+cometPuller:
+  log:
+    tracing: false
+    zap:
+      level: "info"
+      encoding: "json"
+      outputPaths: ["stdout", "/tmp/logs"]
+      errorOutputPaths: ["stderr"]
+      encoderConfig:
+        messageKey: "message"
+        levelKey: "level"
+        levelEncoder: "lowercase"
+
+app:
+  apiUrl: "http://localhost:8080"
+  apiToken: JWT_TOKEN
+  ingestStagingPath: /tmp/rocks-dev/ingests
+  sstBuckets:
+    - name: "db1"
+      source: "sst_example"
+      schedule: "*/1 * * * *"
+      ingestOnlyLatestDirectory: false
+    - name: "db2"
+      source: "sst_example"
+      schedule: "*/1 * * * *"
+      ingestOnlyLatestDirectory: false
+googleCloud:
+  bucketName: some-bucket-name
+  projectId: tdg-analytics-poc
+  serviceAccountLocation: /app/key.json

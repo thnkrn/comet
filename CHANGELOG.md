@@ -1,0 +1,86 @@
+# v1.0.0
+
+## Features
+
+- feat: main functionality implementation of RocksDb service
+- chore: init go project with clean arch
+- feat: POC rocksdb
+- feat: implement a basic handler align with existing bumblebee
+- feat: implement logrus as logger
+- feat: implement error middleware
+- feat: implement log at repo level and deep copy for handler response
+- feat: implement auth middleware
+- feat: init admin api
+- feat: implement admin catch up with primary service
+- feat: implement admin checkpoint service
+- feat: implement live visualization of runtime stats
+- feat: implement ingest service
+- chore: update rocksdb version 7.4.x
+- feat: add not found error case
+- feat: update user endpoint as restful convention
+- feat: update admin and dev endpoint as restful convention
+- feat: use yml file instead of env
+- feat: implement rocksdb connection pool
+- feat: handle db open mode by
+- feat: implement user count endpoint
+- refactor: cleanup logic
+- feat: implement user multi get endpoint
+- feat: integrate prometheus
+- build: implement dockerfile
+- chore: update makefile
+- build: create cli for push docker image to gcs
+- build: optimize docker image size
+- feat: implement multiple go projects in single repo
+- feat: implement allow create db dir if missing
+- chore: bump go version to 1.19
+- feat: implement server and scheduler method for application
+- feat: implement load config and log
+- feat: initiate scheduler method
+- feat: apply clean arch to scheduler and executor
+- refactor: move executor out scheduler
+- refactor: rename project name
+- feat: implement GCS connection
+- feat: Implement http client
+- feat: Implement file driver
+- feat: implement list db endpoint
+- feat: implement rocksdb admin driver
+- chore: update rocksdb version
+- feat: implement log tracing toggle
+- feat: implement zap logger
+- perf: fix bytes buffer mem leak
+- refactor: change project name
+- perf: add persistent model to handle mem leak
+- perf: deallocate mem usage by rocksdb
+- refactor: handle deallocate model
+- perf: optimize log performance
+- feat: implement auto max procs
+- feat: integrate fiber framework
+- build: implement docker for puller
+- refactor: delete comments
+- feat: implement rocksdb pool as sync mutex
+- test: implement unit tests to cover handler and usecase
+- fix: handle lock rocksdb process
+- chore: update rocksdb to 7.8.3
+- fix: update prefix to match with bumblebee
+- fix: use application/octet-stream as get content type
+- chore(puller): update deps
+- fix(api): update accept header
+- feat: call domain func from repository layer, update new api path and add unit tests
+- feat(ingest): support source ingests for api
+- feat: create source folder to support when ingest
+- chore: update deps
+- chore: bump rocksdb version to 7.10.2
+- fix: increase timeout and add info log
+- feat(api): update status code for get last ingest
+- build(deps): bump deps version
+- fix: when calling get last ingest and found 404 return will continue without error
+- fix: set env key replacer on puller
+- chore: create license
+- fix: updating env key replacer
+- fix: add env replacer '-' to '_'
+- fix: update viper unmarshal func to support env overriding on yaml array struct
+- fix: restructure config model
+- fix: re-structure config model
+- fix: change naming convention to support array overriding env
+- build(deps): update deps and rocksdb version to 8.1.1
+- fix: add addtional logic & rename configuration to support array config converting
