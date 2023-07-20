@@ -8,8 +8,8 @@ BINARY_DIR=$(BUILD_DIR)/bin
 CODE_COVERAGE=code-coverage
 DOCKERCMD=docker
 DOCKER_IMAGE_NAME=comet-api
-CONTAINER_REGISTRY_HOST=asia.gcr.io
-CONTAINER_REGISTRY_PROJECT_ID=tdg-analytics-poc
+CONTAINER_REGISTRY_HOST=host
+CONTAINER_REGISTRY_PROJECT_ID=project-id
 CONTAINER_REGISTRY_IMAGE_NAME=comet-api
 
 all: test build
@@ -56,7 +56,7 @@ docker-push: ## Push the image to Container Registry (EX. tag=0.0.1)
 	$(DOCKERCMD) push $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)
 
 docker-deploy: ## Build image by pulling cache from latest build on cloud registry and push to cloud registry
-	$(DOCKERCMD) buildx build --platform linux/amd64 -t $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64  --cache-from type=registry,ref=asia-docker.pkg.dev/gcp-analytics-platform-mgt/product-app/comet-api:buildcache .
+	$(DOCKERCMD) buildx build --platform linux/amd64 -t $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64
 	$(DOCKERCMD) push $(CONTAINER_REGISTRY_HOST)/$(CONTAINER_REGISTRY_PROJECT_ID)/$(CONTAINER_REGISTRY_IMAGE_NAME):$(tag)-amd64 
 
 mockery:

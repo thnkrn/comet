@@ -26,5 +26,5 @@ app:
       ingestOnlyLatestDirectory: false
 googleCloud:
   bucketName: some-bucket-name
-  projectId: tdg-analytics-poc
+  projectId: poc
   serviceAccountLocation: /app/key.json
