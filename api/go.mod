@@ -3,12 +3,13 @@ module github.com/thnkrn/comet/api
 go 1.20
 
 require (
-	github.com/bytedance/sonic v1.9.1
+	github.com/bytedance/sonic v1.10.2
 	github.com/go-playground/validator/v10 v10.14.1
 	github.com/gofiber/adaptor/v2 v2.2.1
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/google/wire v0.5.0
 	github.com/linxGnu/grocksdb v1.8.0
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/prometheus/client_golang v1.15.1
 	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.8.4
@@ -20,7 +21,8 @@ require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
-	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
+	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
+	github.com/chenzhuoyu/iasm v0.9.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
@@ -37,7 +39,6 @@ require (
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/philhofer/fwd v1.1.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
